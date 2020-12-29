@@ -3,8 +3,8 @@ package com.cuttlefish.teamtrackandroid
 import java.util.*
 
 class Event(type: EventType) {
-    var matches: ArrayList<Match>
-    var teams: ArrayList<Team>
+    var matches: ArrayList<Match> = ArrayList<Match>()
+    var teams: ArrayList<Team> = ArrayList<Team>()
     var type: EventType
     fun switchType(newType: EventType) {
         type = newType
@@ -17,8 +17,6 @@ class Event(type: EventType) {
     }
 
     init {
-        matches = ArrayList<Match>()
-        teams = ArrayList<Team>()
         this.type = type
     }
 }
