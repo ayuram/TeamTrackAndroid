@@ -2,7 +2,7 @@ package com.cuttlefish.teamtrackandroid
 
 import java.util.*
 
-class Event(t: EventType) {
+class Event(type: EventType) {
     var matches: ArrayList<Match>
     var teams: ArrayList<Team>
     var type: EventType
@@ -19,6 +19,6 @@ class Event(t: EventType) {
     init {
         matches = ArrayList<Match>()
         teams = ArrayList<Team>()
-        type = t
+        this.type = type
     }
 }
