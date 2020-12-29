@@ -13,8 +13,8 @@ class Team(var number: Int, var name: String, type: EventType) {
         return total / scores.size
     }
 
-    fun bestScore(): Double {
-        var highest = 0.0
+    fun bestScore(): Int {
+        var highest = 0
         for (i in scores.indices) {
             if (scores[i].total() > highest) {
                 highest = scores[i].total()
