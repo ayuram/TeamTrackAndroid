@@ -162,11 +162,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/middle_goals"
-            android:padding="@dimen/counter_text_padding"/>
+            android:padding="@dimen/counter_text_padding"
+            android:text="@string/power_shots" />
         <Space
             android:layout_width="0dp"
             android:layout_height="wrap_content"
