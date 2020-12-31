@@ -7,8 +7,8 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.cuttlefish.teamtrackandroid.R
 
 private val TAB_TITLES = arrayOf(
-        R.string.tab_text_1,
-        R.string.tab_text_2
+        R.string.app_name,// random string rn
+        R.string.app_name
 )
 
 /**
