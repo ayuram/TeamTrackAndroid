@@ -50,6 +50,7 @@ class autoScoring : Fragment() {
         wobbleScore = view.findViewById<View>(R.id.autoWobbles) as TextView
         powerShotUp = view.findViewById<View>(R.id.powerShotUp) as Button
         powerShotDown = view.findViewById<View>(R.id.powerShotDown) as Button
+        powerShotScore = view.findViewById<View>(R.id.autoPowerShots) as TextView
         highGoalUp!!.setOnClickListener {
             highGoalScore!!.text = Integer.toString(++highGoals)
             autoScore.hiGoals++
