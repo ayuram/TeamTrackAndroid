@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
@@ -14,20 +14,20 @@ class autoScoring : Fragment() {
     private var lowGoals = 0
     private var wobbles = 0
     private var powerShots = 0
-    private var highGoalUp: ImageButton? = null
-    private var highGoalDown: ImageButton? = null
+    private var highGoalUp: Button? = null
+    private var highGoalDown: Button? = null
     private var highGoalScore: TextView? = null
-    private var midGoalUp: ImageButton? = null
-    private var midGoalDown: ImageButton? = null
+    private var midGoalUp: Button? = null
+    private var midGoalDown: Button? = null
     private var midGoalScore: TextView? = null
-    private var lowGoalUp: ImageButton? = null
-    private var lowGoalDown: ImageButton? = null
+    private var lowGoalUp: Button? = null
+    private var lowGoalDown: Button? = null
     private var lowGoalScore: TextView? = null
-    private var wobbleUp: ImageButton? = null
-    private var wobbleDown: ImageButton? = null
+    private var wobbleUp: Button? = null
+    private var wobbleDown: Button? = null
     private var wobbleScore: TextView? = null
-    private var powerShotUp: ImageButton? = null
-    private var powerShotDown: ImageButton? = null
+    private var powerShotUp: Button? = null
+    private var powerShotDown: Button? = null
     private var powerShotScore: TextView? = null
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,20 +35,20 @@ class autoScoring : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.auto_scoring, container, false)
-        highGoalUp = view.findViewById<View>(R.id.highGoalUp) as ImageButton
-        highGoalDown = view.findViewById<View>(R.id.highGoalDown) as ImageButton
+        highGoalUp = view.findViewById<View>(R.id.highGoalUp) as Button
+        highGoalDown = view.findViewById<View>(R.id.highGoalDown) as Button
         highGoalScore = view.findViewById<View>(R.id.autoHighGoals) as TextView
-        midGoalUp = view.findViewById<View>(R.id.middleGoalUp) as ImageButton
-        midGoalDown = view.findViewById<View>(R.id.middleGoalDown) as ImageButton
+        midGoalUp = view.findViewById<View>(R.id.middleGoalUp) as Button
+        midGoalDown = view.findViewById<View>(R.id.middleGoalDown) as Button
         midGoalScore = view.findViewById<View>(R.id.autoMiddleGoals) as TextView
-        lowGoalUp = view.findViewById<View>(R.id.lowGoalUp) as ImageButton
-        lowGoalDown = view.findViewById<View>(R.id.lowGoalDown) as ImageButton
+        lowGoalUp = view.findViewById<View>(R.id.lowGoalUp) as Button
+        lowGoalDown = view.findViewById<View>(R.id.lowGoalDown) as Button
         lowGoalScore = view.findViewById<View>(R.id.autoLowGoals) as TextView
-        wobbleUp = view.findViewById<View>(R.id.wobbleUp) as ImageButton
-        wobbleDown = view.findViewById<View>(R.id.wobbleDown) as ImageButton
+        wobbleUp = view.findViewById<View>(R.id.wobbleUp) as Button
+        wobbleDown = view.findViewById<View>(R.id.wobbleDown) as Button
         wobbleScore = view.findViewById<View>(R.id.autoWobbles) as TextView
-        powerShotUp = view.findViewById<View>(R.id.powerShotUp) as ImageButton
-        powerShotDown = view.findViewById<View>(R.id.powerShotDown) as ImageButton
+        powerShotUp = view.findViewById<View>(R.id.powerShotUp) as Button
+        powerShotDown = view.findViewById<View>(R.id.powerShotDown) as Button
         powerShotScore = view.findViewById<View>(R.id.autoPowerShots) as TextView
         highGoalUp!!.setOnClickListener { highGoalScore!!.text = Integer.toString(++highGoals) }
         highGoalDown!!.setOnClickListener { highGoalScore!!.text = Integer.toString(if(highGoals-1 >= 0) --highGoals else highGoals) }
