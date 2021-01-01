@@ -51,17 +51,15 @@ class autoScoring : Fragment() {
         powerShotDown = view.findViewById<View>(R.id.powerShotDown) as ImageButton
         powerShotScore = view.findViewById<View>(R.id.autoPowerShots) as TextView
         highGoalUp!!.setOnClickListener { highGoalScore!!.text = Integer.toString(++highGoals) }
-        highGoalDown!!.setOnClickListener { highGoalScore!!.text = Integer.toString(--highGoals) }
+        highGoalDown!!.setOnClickListener { highGoalScore!!.text = Integer.toString(if(highGoals-1 >= 0) --highGoals else highGoals) }
         midGoalUp!!.setOnClickListener { midGoalScore!!.text = Integer.toString(++midGoals) }
-        midGoalDown!!.setOnClickListener { midGoalScore!!.text = Integer.toString(--midGoals) }
+        midGoalDown!!.setOnClickListener { midGoalScore!!.text = Integer.toString(if(midGoals-1 >= 0) --midGoals else midGoals) }
         lowGoalUp!!.setOnClickListener { lowGoalScore!!.text = Integer.toString(++lowGoals) }
-        lowGoalDown!!.setOnClickListener { lowGoalScore!!.text = Integer.toString(--lowGoals) }
+        lowGoalDown!!.setOnClickListener { lowGoalScore!!.text = Integer.toString(if(lowGoals-1 >= 0) --lowGoals else lowGoals) }
         wobbleUp!!.setOnClickListener { wobbleScore!!.text = Integer.toString(++wobbles) }
-        wobbleDown!!.setOnClickListener { wobbleScore!!.text = Integer.toString(--wobbles) }
+        wobbleDown!!.setOnClickListener { wobbleScore!!.text = Integer.toString(if(wobbles-1 >= 0) --wobbles else wobbles) }
         powerShotUp!!.setOnClickListener { powerShotScore!!.text = Integer.toString(++powerShots) }
-        powerShotDown!!.setOnClickListener {
-            powerShotScore!!.text = Integer.toString(--powerShots)
-        }
+        powerShotDown!!.setOnClickListener { powerShotScore!!.text = Integer.toString(if(powerShots-1 >= 0) --powerShots else powerShots) }
         return view
     }
 

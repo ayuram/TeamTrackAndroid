@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/appbar_padding">
+
         <Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -35,5 +36,17 @@
 
 
     </androidx.viewpager.widget.ViewPager>
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="205"
+        app:layout_anchor="@+id/appbar"
+        app:layout_anchorGravity="center"
+        android:gravity="center"
+        android:textSize="50dp"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
