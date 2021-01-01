@@ -15,32 +15,42 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2" />
-        <TextView
-            android:id="@+id/teleHighGoals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/zero"
-            android:padding="@dimen/counter_text_padding"/>
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/teleHighGoalUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/up_arrow"
-                android:src="@android:drawable/arrow_up_float" />
-
-            <ImageButton
+            <Button
                 android:id="@+id/teleHighGoalDown"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/minus_sign" />
+
+            <TextView
+                android:id="@+id/teleHighGoals"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/down_arrow"
-                android:src="@android:drawable/arrow_down_float" />
+                android:padding="@dimen/counter_text_padding"
+                android:text="@string/zero" />
+
+            <Button
+                android:id="@+id/teleHighGoalUp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/plus_sign" />
         </LinearLayout>
     </LinearLayout>
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,32 +64,43 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2" />
-        <TextView
-            android:id="@+id/teleMiddleGoals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/zero"
-            android:padding="@dimen/counter_text_padding"/>
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/teleMiddleGoalUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/up_arrow"
-                android:src="@android:drawable/arrow_up_float" />
-
-            <ImageButton
+            <Button
                 android:id="@+id/teleMiddleGoalDown"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/minus_sign" />
+
+            <TextView
+                android:id="@+id/teleMiddleGoals"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/down_arrow"
-                android:src="@android:drawable/arrow_down_float" />
+                android:padding="@dimen/counter_text_padding"
+                android:text="@string/zero" />
+
+            <Button
+                android:id="@+id/teleMiddleGoalUp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/plus_sign" />
+
         </LinearLayout>
     </LinearLayout>
+
+    <View
+        android:id="@+id/divider7"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -93,29 +114,33 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2" />
-        <TextView
-            android:id="@+id/teleLowGoals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/zero"
-            android:padding="@dimen/counter_text_padding"/>
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/teleLowGoalUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/up_arrow"
-                android:src="@android:drawable/arrow_up_float" />
+            android:layout_height="wrap_content">
 
-            <ImageButton
+            <Button
                 android:id="@+id/teleLowGoalDown"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/minus_sign" />
+
+            <TextView
+                android:id="@+id/teleLowGoals"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/down_arrow"
-                android:src="@android:drawable/arrow_down_float" />
+                android:padding="@dimen/counter_text_padding"
+                android:text="@string/zero" />
+
+            <Button
+                android:id="@+id/teleLowGoalUp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/plus_sign" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
