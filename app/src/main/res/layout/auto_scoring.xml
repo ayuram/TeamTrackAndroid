@@ -20,31 +20,33 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <TextView
-            android:id="@+id/autoHighGoals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/counter_text_padding"
-            android:text="@string/zero" />
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/highGoalUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/up_arrow"
-                android:src="@android:drawable/arrow_up_float" />
-
-            <ImageButton
+            <Button
                 android:id="@+id/highGoalDown"
-                android:layout_width="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/minus_sign" />
+
+
+            <TextView
+                android:id="@+id/autoHighGoals"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/down_arrow"
-                android:src="@android:drawable/arrow_down_float" />
+                android:padding="@dimen/counter_text_padding"
+                android:text="@string/zero" />
+            <Button
+                android:id="@+id/highGoalUp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/plus_sign" />
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -60,28 +62,31 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
-        <TextView
-            android:id="@+id/autoMiddleGoals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/zero"
-            android:padding="@dimen/counter_text_padding"/>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/middleGoalUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/arrow_up_float"
-                android:contentDescription="@string/up_arrow" />
-            <ImageButton
+            android:orientation="horizontal">
+            <Button
                 android:id="@+id/middleGoalDown"
-                android:layout_width="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/minus_sign" />
+            <TextView
+                android:id="@+id/autoMiddleGoals"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:src="@android:drawable/arrow_down_float"
-                android:contentDescription="@string/down_arrow"/>
+                android:text="@string/zero"
+                android:padding="@dimen/counter_text_padding"/>
+            <Button
+                android:id="@+id/middleGoalUp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/plus_sign" />
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -97,28 +102,33 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
-        <TextView
-            android:id="@+id/autoLowGoals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/zero"
-            android:padding="@dimen/counter_text_padding"/>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/lowGoalUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/arrow_up_float"
-                android:contentDescription="@string/up_arrow" />
-            <ImageButton
+            android:orientation="horizontal">
+
+            <Button
                 android:id="@+id/lowGoalDown"
-                android:layout_width="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/minus_sign" />
+            <TextView
+                android:id="@+id/autoLowGoals"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:src="@android:drawable/arrow_down_float"
-                android:contentDescription="@string/down_arrow"/>
+                android:text="@string/zero"
+                android:padding="@dimen/counter_text_padding"/>
+
+            <Button
+                android:id="@+id/lowGoalUp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/plus_sign" />
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -134,35 +144,39 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
-        <TextView
-            android:id="@+id/autoWobbles"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/zero"
-            android:padding="@dimen/counter_text_padding"/>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/wobbleUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/arrow_up_float"
-                android:contentDescription="@string/up_arrow" />
-            <ImageButton
+            android:orientation="horizontal">
+
+            <Button
                 android:id="@+id/wobbleDown"
-                android:layout_width="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/minus_sign" />
+            <TextView
+                android:id="@+id/autoWobbles"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:src="@android:drawable/arrow_down_float"
-                android:contentDescription="@string/down_arrow"/>
+                android:text="@string/zero"
+                android:padding="@dimen/counter_text_padding"/>
+
+            <Button
+                android:id="@+id/wobbleUp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/plus_sign" />
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -172,28 +186,30 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
-        <TextView
-            android:id="@+id/autoPowerShots"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/zero"
-            android:padding="@dimen/counter_text_padding"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/powerShotUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/arrow_up_float"
-                android:contentDescription="@string/up_arrow" />
-            <ImageButton
+            android:orientation="horizontal">
+            <Button
                 android:id="@+id/powerShotDown"
-                android:layout_width="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/minus_sign" />
+            <TextView
+                android:id="@+id/autoPowerShots"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:src="@android:drawable/arrow_down_float"
-                android:contentDescription="@string/down_arrow"/>
+                android:text="@string/zero"
+                android:padding="@dimen/counter_text_padding"/>
+            <Button
+                android:id="@+id/powerShotUp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7C52F1"
+                android:text="@string/plus_sign" />
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
