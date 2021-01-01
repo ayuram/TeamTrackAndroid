@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 
 class autoScoring : Fragment() {
+    var autoScore = AutoScore()
     private var highGoals = 0
     private var midGoals = 0
     private var lowGoals = 0
@@ -49,17 +50,64 @@ class autoScoring : Fragment() {
         wobbleScore = view.findViewById<View>(R.id.autoWobbles) as TextView
         powerShotUp = view.findViewById<View>(R.id.powerShotUp) as Button
         powerShotDown = view.findViewById<View>(R.id.powerShotDown) as Button
-        powerShotScore = view.findViewById<View>(R.id.autoPowerShots) as TextView
-        highGoalUp!!.setOnClickListener { highGoalScore!!.text = Integer.toString(++highGoals) }
-        highGoalDown!!.setOnClickListener { highGoalScore!!.text = Integer.toString(if(highGoals-1 >= 0) --highGoals else highGoals) }
-        midGoalUp!!.setOnClickListener { midGoalScore!!.text = Integer.toString(++midGoals) }
-        midGoalDown!!.setOnClickListener { midGoalScore!!.text = Integer.toString(if(midGoals-1 >= 0) --midGoals else midGoals) }
-        lowGoalUp!!.setOnClickListener { lowGoalScore!!.text = Integer.toString(++lowGoals) }
-        lowGoalDown!!.setOnClickListener { lowGoalScore!!.text = Integer.toString(if(lowGoals-1 >= 0) --lowGoals else lowGoals) }
-        wobbleUp!!.setOnClickListener { wobbleScore!!.text = Integer.toString(++wobbles) }
-        wobbleDown!!.setOnClickListener { wobbleScore!!.text = Integer.toString(if(wobbles-1 >= 0) --wobbles else wobbles) }
-        powerShotUp!!.setOnClickListener { powerShotScore!!.text = Integer.toString(++powerShots) }
-        powerShotDown!!.setOnClickListener { powerShotScore!!.text = Integer.toString(if(powerShots-1 >= 0) --powerShots else powerShots) }
+        highGoalUp!!.setOnClickListener {
+            highGoalScore!!.text = Integer.toString(++highGoals)
+            autoScore.hiGoals++
+        }
+        highGoalDown!!.setOnClickListener {
+            if(autoScore.hiGoals > 0) {
+                highGoalScore!!.text = Integer.toString(--highGoals)
+                autoScore.hiGoals--
+            }
+        }
+
+        midGoalUp!!.setOnClickListener {
+            midGoalScore!!.text = Integer.toString(++midGoals)
+            autoScore.midGoals ++
+        }
+        midGoalDown!!.setOnClickListener {
+            if(autoScore.midGoals > 0) {
+                midGoalScore!!.text = Integer.toString(--midGoals)
+                autoScore.midGoals --
+            }
+        }
+
+        lowGoalUp!!.setOnClickListener {
+            lowGoalScore!!.text = Integer.toString(++lowGoals)
+            autoScore.lowGoals ++
+        }
+        lowGoalDown!!.setOnClickListener {
+            if(autoScore.lowGoals > 0) {
+                lowGoalScore!!.text = Integer.toString(--lowGoals)
+                autoScore.lowGoals --
+            }
+        }
+
+        wobbleUp!!.setOnClickListener {
+            if(autoScore.wobbleGoals < 2) {
+                wobbleScore!!.text = Integer.toString(++wobbles)
+                autoScore.wobbleGoals ++
+            }
+        }
+        wobbleDown!!.setOnClickListener {
+            if(autoScore.wobbleGoals > 0) {
+                wobbleScore!!.text = Integer.toString(--wobbles)
+                autoScore.wobbleGoals --
+            }
+        }
+
+        powerShotUp!!.setOnClickListener {
+            if(autoScore.pwrShots < 3) {
+                powerShotScore!!.text = Integer.toString(++powerShots)
+                autoScore.pwrShots ++
+            }
+        }
+        powerShotDown!!.setOnClickListener {
+            if(autoScore.pwrShots > 0) {
+                powerShotScore!!.text = Integer.toString(--autoScore.pwrShots)
+                autoScore.pwrShots --
+            }
+        }
         return view
     }
 
