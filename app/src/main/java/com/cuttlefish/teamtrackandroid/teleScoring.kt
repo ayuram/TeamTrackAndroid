@@ -37,12 +37,20 @@ class teleScoring : Fragment() {
         lowGoalUp = view.findViewById<View>(R.id.teleLowGoalUp) as Button
         lowGoalDown = view.findViewById<View>(R.id.teleLowGoalDown) as Button
         lowGoalScore = view.findViewById<View>(R.id.teleLowGoals) as TextView
-        highGoalUp!!.setOnClickListener { highGoalScore!!.text = Integer.toString(++highGoals) }
-        highGoalDown!!.setOnClickListener { highGoalScore!!.text = Integer.toString(--highGoals) }
-        midGoalUp!!.setOnClickListener { midGoalScore!!.text = Integer.toString(++midGoals) }
-        midGoalDown!!.setOnClickListener { midGoalScore!!.text = Integer.toString(--midGoals) }
-        lowGoalUp!!.setOnClickListener { lowGoalScore!!.text = Integer.toString(++lowGoals) }
-        lowGoalDown!!.setOnClickListener { lowGoalScore!!.text = Integer.toString(--lowGoals) }
+        highGoalUp?.setOnClickListener {
+            highGoals++
+            teleScore.hiGoals++
+            highGoalScore?.setText(highGoals)
+        }
+        highGoalDown?.setOnClickListener {
+            highGoals--
+            teleScore.hiGoals--
+            highGoalScore?.setText(highGoals)
+        }
+        midGoalUp?.setOnClickListener { midGoalScore!!.text = Integer.toString(++midGoals) }
+        midGoalDown?.setOnClickListener { midGoalScore!!.text = Integer.toString(--midGoals) }
+        lowGoalUp?.setOnClickListener { lowGoalScore!!.text = Integer.toString(++lowGoals) }
+        lowGoalDown?.setOnClickListener { lowGoalScore!!.text = Integer.toString(--lowGoals) }
         return view
     }
 

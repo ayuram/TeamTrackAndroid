@@ -35,7 +35,7 @@ class endgameScoring : Fragment() {
         powerShotDown = view.findViewById<View>(R.id.endgamePowerShotsDown) as Button
         endgamePowerShotScore = view.findViewById<View>(R.id.endgamePowerShots) as TextView
         wobblesDropUp = view.findViewById<View>(R.id.wobblesDropUp) as Button
-        wobblesDropDown = view.findViewById<View>(R.id.wobblesDrop) as Button
+        wobblesDropDown = view.findViewById<View>(R.id.wobblesDropDown) as Button
         wobblesDropScore = view.findViewById<View>(R.id.wobblesDrop) as TextView
         wobblesStartUp = view.findViewById<View>(R.id.wobblesStartUp) as Button
         wobblesStartDown = view.findViewById<View>(R.id.wobblesStartDown) as Button
