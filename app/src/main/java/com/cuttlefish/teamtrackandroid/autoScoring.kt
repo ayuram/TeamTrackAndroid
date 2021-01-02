@@ -51,6 +51,7 @@ class autoScoring : Fragment() {
         powerShotUp = view.findViewById<View>(R.id.powerShotUp) as Button
         powerShotDown = view.findViewById<View>(R.id.powerShotDown) as Button
         powerShotScore = view.findViewById<View>(R.id.autoPowerShots) as TextView
+       // highGoalScore?.setText(0)
         highGoalUp!!.setOnClickListener {
             highGoalScore!!.text = Integer.toString(++highGoals)
             autoScore.hiGoals++

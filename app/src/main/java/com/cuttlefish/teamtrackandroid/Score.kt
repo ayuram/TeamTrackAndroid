@@ -6,7 +6,7 @@ import android.os.Parcelable
 import androidx.annotation.RequiresApi
 import java.util.*
 
-class Score(var id: UUID) {
+class Score(var id: UUID){
     var autoScore: AutoScore = AutoScore()
     var teleScore: TeleScore = TeleScore()
     var endScore: EndScore = EndScore()

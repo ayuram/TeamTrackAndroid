@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import java.util.*
 
 class ScoringActivity : AppCompatActivity() {
     private var mSectionsPageAdapter: SectionsPageAdapter? = null
+    var x: FragmentPagerAdapter? = null
     private var mViewPager: ViewPager? = null
     var score = Score(UUID.randomUUID())
     override fun onCreate(savedInstanceState: Bundle?) {
