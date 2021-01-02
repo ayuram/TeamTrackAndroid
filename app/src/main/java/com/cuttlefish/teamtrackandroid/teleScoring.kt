@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 
 class teleScoring : Fragment() {
+    var teleScore =  TeleScore()
     private var highGoals = 0
     private var midGoals = 0
     private var lowGoals = 0
