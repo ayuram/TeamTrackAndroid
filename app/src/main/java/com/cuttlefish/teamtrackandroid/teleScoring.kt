@@ -10,9 +10,6 @@ import androidx.fragment.app.Fragment
 
 class teleScoring : Fragment() {
     var teleScore =  TeleScore()
-    private var highGoals = 0
-    private var midGoals = 0
-    private var lowGoals = 0
     private var highGoalUp: Button? = null
     private var highGoalDown: Button? = null
     private var highGoalScore: TextView? = null
@@ -37,23 +34,38 @@ class teleScoring : Fragment() {
         lowGoalUp = view.findViewById<View>(R.id.teleLowGoalUp) as Button
         lowGoalDown = view.findViewById<View>(R.id.teleLowGoalDown) as Button
         lowGoalScore = view.findViewById<View>(R.id.teleLowGoals) as TextView
+        setFields()
         highGoalUp?.setOnClickListener {
-            highGoals++
             teleScore.hiGoals++
-            highGoalScore?.setText(highGoals)
+            setFields()
         }
         highGoalDown?.setOnClickListener {
-            highGoals--
-            teleScore.hiGoals--
-            highGoalScore?.setText(highGoals)
+            if(teleScore.hiGoals > 0) teleScore.hiGoals--
+            setFields()
         }
-        midGoalUp?.setOnClickListener { midGoalScore!!.text = Integer.toString(++midGoals) }
-        midGoalDown?.setOnClickListener { midGoalScore!!.text = Integer.toString(--midGoals) }
-        lowGoalUp?.setOnClickListener { lowGoalScore!!.text = Integer.toString(++lowGoals) }
-        lowGoalDown?.setOnClickListener { lowGoalScore!!.text = Integer.toString(--lowGoals) }
+        midGoalUp?.setOnClickListener {
+            teleScore.midGoals ++
+            setFields()
+        }
+        midGoalDown?.setOnClickListener {
+            if(teleScore.midGoals > 0) teleScore.midGoals --
+            setFields()
+        }
+        lowGoalUp?.setOnClickListener {
+            teleScore.lowGoals ++
+            setFields()
+        }
+        lowGoalDown?.setOnClickListener {
+            if(teleScore.lowGoals > 0) teleScore.lowGoals --
+            setFields()
+        }
         return view
     }
-
+    fun setFields(){
+        highGoalScore?.text = Integer.toString(teleScore.hiGoals)
+        midGoalScore?.text = Integer.toString(teleScore.midGoals)
+        lowGoalScore?.text = Integer.toString(teleScore.lowGoals)
+    }
     companion object {
         private const val TAG = "teleScoring"
     }

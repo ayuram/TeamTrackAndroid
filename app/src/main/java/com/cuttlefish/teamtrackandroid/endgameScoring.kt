@@ -9,10 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 
 class endgameScoring : Fragment() {
-    private var endgamePowerShots = 0
-    private var wobblesDrop = 0
-    private var wobblesStart = 0
-    private var wobbleRings = 0
+    var endgameScore = EndScore()
     private var powerShotUp: Button? = null
     private var powerShotDown: Button? = null
     private var endgamePowerShotScore: TextView? = null
@@ -43,33 +40,54 @@ class endgameScoring : Fragment() {
         wobbleRingsUp = view.findViewById<View>(R.id.wobbleRingsUp) as Button
         wobbleRingsDown = view.findViewById<View>(R.id.wobbleRingsDown) as Button
         wobbleRingsScore = view.findViewById<View>(R.id.wobbleRings) as TextView
+        setFields()
         powerShotUp!!.setOnClickListener {
-            endgamePowerShotScore!!.text = Integer.toString(++endgamePowerShots)
+            if(endgameScore.pwrShots < 3){
+                endgameScore.pwrShots ++
+            }
+            setFields()
         }
         powerShotDown!!.setOnClickListener {
-            endgamePowerShotScore!!.text = Integer.toString(--endgamePowerShots)
+            if(endgameScore.pwrShots > 0){
+                endgameScore.pwrShots --
+            }
+            setFields()
         }
         wobblesDropUp!!.setOnClickListener {
-            wobblesDropScore!!.text = Integer.toString(++wobblesDrop)
+            if(endgameScore.wobbleGoalsInDrop < 2){
+                endgameScore.wobbleGoalsInDrop ++
+            }
+            setFields()
         }
         wobblesDropDown!!.setOnClickListener {
-            wobblesDropScore!!.text = Integer.toString(--wobblesDrop)
+            if(endgameScore.wobbleGoalsInDrop > 0) endgameScore.wobbleGoalsInDrop --
         }
         wobblesStartUp!!.setOnClickListener {
-            wobblesStartScore!!.text = Integer.toString(++wobblesStart)
+            if(endgameScore.wobbleGoalsInStart < 2){
+                endgameScore.wobbleGoalsInStart ++
+            }
+            setFields()
         }
         wobblesStartDown!!.setOnClickListener {
-            wobblesStartScore!!.text = Integer.toString(--wobblesStart)
+            if(endgameScore.wobbleGoalsInStart > 0) endgameScore.wobbleGoalsInStart --
+            setFields()
         }
         wobbleRingsUp!!.setOnClickListener {
-            wobbleRingsScore!!.text = Integer.toString(++wobbleRings)
+            endgameScore.ringsOnWobble++
+            setFields()
         }
         wobbleRingsDown!!.setOnClickListener {
-            wobbleRingsScore!!.text = Integer.toString(--wobbleRings)
+            if(endgameScore.ringsOnWobble > 0) endgameScore.ringsOnWobble--
+            setFields()
         }
         return view
     }
-
+    fun setFields(){
+        wobbleRingsScore?.text = Integer.toString(endgameScore.ringsOnWobble)
+        wobblesStartScore?.text = Integer.toString(endgameScore.wobbleGoalsInStart)
+        wobblesDropScore?.text = Integer.toString(endgameScore.wobbleGoalsInDrop)
+        endgamePowerShotScore?.text = Integer.toString(endgameScore.pwrShots)
+    }
     companion object {
         private const val TAG = "autoScoring"
     }

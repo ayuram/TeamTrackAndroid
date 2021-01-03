@@ -30,10 +30,11 @@
 
             <TextView
                 android:id="@+id/teleHighGoals"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/counter_text_padding"
-                android:text="@string/zero" />
+                android:text="@string/zero"
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/teleHighGoalUp"
@@ -79,10 +80,11 @@
 
             <TextView
                 android:id="@+id/teleMiddleGoals"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/counter_text_padding"
-                android:text="@string/zero" />
+                android:text="@string/zero"
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/teleMiddleGoalUp"
@@ -129,10 +131,11 @@
 
             <TextView
                 android:id="@+id/teleLowGoals"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/counter_text_padding"
-                android:text="@string/zero" />
+                android:text="@string/zero"
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/teleLowGoalUp"

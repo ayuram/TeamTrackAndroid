@@ -1,20 +1,18 @@
 package com.cuttlefish.teamtrackandroid
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Switch
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import java.util.*
 
 class autoScoring : Fragment() {
     var autoScore = AutoScore()
-    private var highGoals = 0
-    private var midGoals = 0
-    private var lowGoals = 0
-    private var wobbles = 0
-    private var powerShots = 0
     private var highGoalUp: Button? = null
     private var highGoalDown: Button? = null
     private var highGoalScore: TextView? = null
@@ -30,6 +28,8 @@ class autoScoring : Fragment() {
     private var powerShotUp: Button? = null
     private var powerShotDown: Button? = null
     private var powerShotScore: TextView? = null
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    private var navigated: Switch? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -51,68 +51,75 @@ class autoScoring : Fragment() {
         powerShotUp = view.findViewById<View>(R.id.powerShotUp) as Button
         powerShotDown = view.findViewById<View>(R.id.powerShotDown) as Button
         powerShotScore = view.findViewById<View>(R.id.autoPowerShots) as TextView
-       // highGoalScore?.setText(0)
+        setFields()
         highGoalUp!!.setOnClickListener {
-            highGoalScore!!.text = Integer.toString(++highGoals)
             autoScore.hiGoals++
+            setFields()
         }
         highGoalDown!!.setOnClickListener {
             if(autoScore.hiGoals > 0) {
-                highGoalScore!!.text = Integer.toString(--highGoals)
                 autoScore.hiGoals--
+                setFields()
             }
         }
 
         midGoalUp!!.setOnClickListener {
-            midGoalScore!!.text = Integer.toString(++midGoals)
             autoScore.midGoals ++
+            setFields()
         }
         midGoalDown!!.setOnClickListener {
             if(autoScore.midGoals > 0) {
-                midGoalScore!!.text = Integer.toString(--midGoals)
                 autoScore.midGoals --
+                setFields()
             }
         }
 
         lowGoalUp!!.setOnClickListener {
-            lowGoalScore!!.text = Integer.toString(++lowGoals)
             autoScore.lowGoals ++
+            setFields()
         }
         lowGoalDown!!.setOnClickListener {
             if(autoScore.lowGoals > 0) {
-                lowGoalScore!!.text = Integer.toString(--lowGoals)
                 autoScore.lowGoals --
+                setFields()
             }
         }
 
         wobbleUp!!.setOnClickListener {
             if(autoScore.wobbleGoals < 2) {
-                wobbleScore!!.text = Integer.toString(++wobbles)
                 autoScore.wobbleGoals ++
+                setFields()
             }
         }
         wobbleDown!!.setOnClickListener {
             if(autoScore.wobbleGoals > 0) {
-                wobbleScore!!.text = Integer.toString(--wobbles)
                 autoScore.wobbleGoals --
+                setFields()
             }
         }
 
         powerShotUp!!.setOnClickListener {
             if(autoScore.pwrShots < 3) {
-                powerShotScore!!.text = Integer.toString(++powerShots)
                 autoScore.pwrShots ++
+                setFields()
             }
         }
         powerShotDown!!.setOnClickListener {
             if(autoScore.pwrShots > 0) {
-                powerShotScore!!.text = Integer.toString(--autoScore.pwrShots)
                 autoScore.pwrShots --
+                setFields()
             }
         }
         return view
     }
-
+    fun setFields(){
+        highGoalScore?.text = Integer.toString(autoScore.hiGoals)
+        midGoalScore?.text = Integer.toString(autoScore.midGoals)
+        lowGoalScore?.text = Integer.toString(autoScore.lowGoals)
+        wobbleScore?.text = Integer.toString(autoScore.wobbleGoals)
+        powerShotScore?.text = Integer.toString(autoScore.pwrShots)
+        navigated?.isChecked = autoScore.navigated
+    }
     companion object {
         private const val TAG = "autoScoring"
     }

@@ -42,10 +42,11 @@
 
             <TextView
                 android:id="@+id/autoHighGoals"
-                android:layout_width="40dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/counter_text_padding"
-                android:text="@string/zero" />
+                android:text="@string/zero"
+                android:textAlignment="center" />
             <Button
                 android:id="@+id/highGoalUp"
                 android:layout_width="40dp"
@@ -87,12 +88,14 @@
                 android:layout_weight="1"
                 android:backgroundTint="#7C52F1"
                 android:text="@string/minus_sign" />
+
             <TextView
                 android:id="@+id/autoMiddleGoals"
-                android:layout_width="40dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/counter_text_padding"
                 android:text="@string/zero"
-                android:padding="@dimen/counter_text_padding"/>
+                android:textAlignment="center" />
             <Button
                 android:id="@+id/middleGoalUp"
                 android:layout_width="40dp"
@@ -135,12 +138,14 @@
                 android:layout_weight="1"
                 android:backgroundTint="#7C52F1"
                 android:text="@string/minus_sign" />
+
             <TextView
                 android:id="@+id/autoLowGoals"
-                android:layout_width="40dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/counter_text_padding"
                 android:text="@string/zero"
-                android:padding="@dimen/counter_text_padding"/>
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/lowGoalUp"
@@ -184,12 +189,14 @@
                 android:layout_weight="1"
                 android:backgroundTint="#7C52F1"
                 android:text="@string/minus_sign" />
+
             <TextView
                 android:id="@+id/autoWobbles"
-                android:layout_width="40dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/counter_text_padding"
                 android:text="@string/zero"
-                android:padding="@dimen/counter_text_padding"/>
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/wobbleUp"
@@ -231,12 +238,14 @@
                 android:layout_weight="1"
                 android:backgroundTint="#7C52F1"
                 android:text="@string/minus_sign" />
+
             <TextView
                 android:id="@+id/autoPowerShots"
-                android:layout_width="40dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/counter_text_padding"
                 android:text="@string/zero"
-                android:padding="@dimen/counter_text_padding"/>
+                android:textAlignment="center" />
             <Button
                 android:id="@+id/powerShotUp"
                 android:layout_width="40dp"

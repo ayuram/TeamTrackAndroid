@@ -30,10 +30,11 @@
 
             <TextView
                 android:id="@+id/endgamePowerShots"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/counter_text_padding"
-                android:text="@string/zero" />
+                android:text="@string/zero"
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/endgamePowerShotsUp"
@@ -80,10 +81,11 @@
 
             <TextView
                 android:id="@+id/wobblesDrop"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/counter_text_padding"
-                android:text="@string/zero" />
+                android:text="@string/zero"
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/wobblesDropUp"
@@ -129,10 +131,11 @@
 
             <TextView
                 android:id="@+id/wobblesStart"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/counter_text_padding"
-                android:text="@string/zero" />
+                android:text="@string/zero"
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/wobblesStartUp"
@@ -178,10 +181,11 @@
 
             <TextView
                 android:id="@+id/wobbleRings"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/counter_text_padding"
-                android:text="@string/zero" />
+                android:text="@string/zero"
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/wobbleRingsUp"
