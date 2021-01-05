@@ -14,29 +14,35 @@ class Team(var number: Int, var name: String, type: EventType) {
     }
 
     fun bestScore(): Int {
-        var highest = 0
-        for (i in scores.indices) {
-            if (scores[i].total() > highest) {
-                highest = scores[i].total()
-            }
-        }
-        return highest
+        return scores
+                .map { it.total().toDouble() }
+                .max()
+                .toInt()
     }
 
     fun MADScore(): Double {
-        val differences = ArrayList<Double>()
-        val avg = avgScore()
-        for (i in scores.indices) {
-            differences.add(Math.abs(scores[i].total() - avg))
-        }
-        var total = 0.0
-        for (i in differences.indices) {
-            total += differences[i]
-        }
-        return total / differences.size
+        return scores
+                .map { it.total().toDouble() }
+                .MAD()
     }
 
     init {
         this.type = type
     }
+}
+fun List<Double>.mean(): Double{
+    return this.reduce { x, y -> x + y } / this.count().toDouble()
+}
+fun List<Double>.MAD(): Double {
+    val mean = this.mean()
+    return this.map { Math.abs(it - mean) }.mean()
+}
+fun List<Double>.max(): Double{
+    var highest = 0.0
+    for (i in this.indices) {
+        if (this[i] > highest) {
+            highest = this[i]
+        }
+    }
+    return highest
 }
