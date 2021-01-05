@@ -1,4 +1,4 @@
-package com.cuttlefish.teamtrackandroid
+package com.cuttlefish.teamtrackandroid.MatchStats
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.cuttlefish.teamtrackandroid.EndScore
+import com.cuttlefish.teamtrackandroid.R
 
 class endgameScoring : Fragment() {
     var endgameScore = EndScore()
@@ -61,6 +63,7 @@ class endgameScoring : Fragment() {
         }
         wobblesDropDown!!.setOnClickListener {
             if(endgameScore.wobbleGoalsInDrop > 0) endgameScore.wobbleGoalsInDrop --
+            setFields()
         }
         wobblesStartUp!!.setOnClickListener {
             if(endgameScore.wobbleGoalsInStart < 2){

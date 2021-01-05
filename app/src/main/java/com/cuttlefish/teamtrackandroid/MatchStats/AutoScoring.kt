@@ -1,4 +1,4 @@
-package com.cuttlefish.teamtrackandroid
+package com.cuttlefish.teamtrackandroid.MatchStats
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,7 +9,8 @@ import android.widget.Button
 import android.widget.Switch
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import java.util.*
+import com.cuttlefish.teamtrackandroid.AutoScore
+import com.cuttlefish.teamtrackandroid.R
 
 class autoScoring : Fragment() {
     var autoScore = AutoScore()

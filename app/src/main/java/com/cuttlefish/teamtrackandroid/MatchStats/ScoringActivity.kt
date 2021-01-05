@@ -1,4 +1,4 @@
-package com.cuttlefish.teamtrackandroid
+package com.cuttlefish.teamtrackandroid.MatchStats
 
 import android.os.Bundle
 import android.util.Log
@@ -6,6 +6,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.cuttlefish.teamtrackandroid.R
+import com.cuttlefish.teamtrackandroid.Score
+import com.cuttlefish.teamtrackandroid.SectionsPageAdapter
 import com.google.android.material.tabs.TabLayout
 import java.util.*
 
