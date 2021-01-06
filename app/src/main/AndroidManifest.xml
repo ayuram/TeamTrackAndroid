@@ -11,22 +11,22 @@
         android:theme="@style/Theme.TeamTrackAndroid">
 
 <!--        scoring activity-->
-        <activity android:name=".MatchStats.ScoringActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-<!--        team view activity-->
-<!--        <activity android:name=".TeamView.TeamView">-->
+<!--        <activity android:name=".MatchStats.ScoringActivity">-->
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
 <!--        </activity>-->
+
+<!--        team view activity-->
+        <activity android:name=".TeamView.TeamView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
