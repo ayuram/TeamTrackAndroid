@@ -40,7 +40,6 @@ public class TeamView extends AppCompatActivity {
 
         ArrayList<ChartItem> list = new ArrayList<>();
 
-
         list.add(new LineChartItem(generateDataLine(1), getApplicationContext()));
         list.add(new LineChartItem(generateDataLine(2), getApplicationContext()));
         list.add(new LineChartItem(generateDataLine(3), getApplicationContext()));
@@ -115,7 +114,7 @@ public class TeamView extends AppCompatActivity {
 
         ArrayList<BarEntry> entries = new ArrayList<>();
 
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < 3; i++) {
             entries.add(new BarEntry(i, (int) (Math.random() * 70) + 30));
         }
 

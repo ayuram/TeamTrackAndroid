@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.XAxis.XAxisPosition;
 import com.github.mikephil.charting.components.YAxis;
@@ -53,24 +55,30 @@ public class BarChartItem extends ChartItem{
         holder.chart.getDescription().setEnabled(false);
         holder.chart.setDrawGridBackground(false);
         holder.chart.setDrawBarShadow(false);
+        holder.chart.setDrawMarkers(false);
+        holder.chart.setDrawBorders(false);
+
+        Description description = holder.chart.getDescription();
+        description.setEnabled(true);
 
         XAxis xAxis = holder.chart.getXAxis();
+        xAxis.setDrawAxisLine(false);
+        xAxis.setDrawLabels(false);
         xAxis.setPosition(XAxisPosition.BOTTOM);
         //xAxis.setTypeface(mTf);
         xAxis.setDrawGridLines(false);
-        xAxis.setDrawAxisLine(true);
+        xAxis.setDrawAxisLine(false);
 
         YAxis leftAxis = holder.chart.getAxisLeft();
         //leftAxis.setTypeface(mTf);
-        leftAxis.setLabelCount(5, false);
-        leftAxis.setSpaceTop(20f);
-        leftAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
+        leftAxis.setDrawLabels(false);
 
         YAxis rightAxis = holder.chart.getAxisRight();
         //rightAxis.setTypeface(mTf);
-        rightAxis.setLabelCount(5, false);
-        rightAxis.setSpaceTop(20f);
-        rightAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
+        rightAxis.setDrawLabels(false);
+
+        Legend legend = holder.chart.getLegend();
+        legend.setEnabled(false);
 
         //mChartData.setValueTypeface(mTf);
 

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.XAxis.XAxisPosition;
 import com.github.mikephil.charting.components.YAxis;
@@ -67,16 +68,20 @@ public class LineChartItem extends ChartItem {
 
         YAxis rightAxis = holder.chart.getAxisRight();
         //rightAxis.setTypeface(mTf);
-        rightAxis.setLabelCount(5, false);
+        rightAxis.setDrawLabels(false);
         rightAxis.setDrawGridLines(false);
         rightAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
+
+        Legend legend = holder.chart.getLegend();
+        legend.setEnabled(false);
 
         // set data
         holder.chart.setData((LineData) mChartData);
 
         // do not forget to refresh the chart
         // holder.chart.invalidate();
-        holder.chart.animateX(750);
+        holder.chart.animateY(750);
+
 
         return convertView;
     }
