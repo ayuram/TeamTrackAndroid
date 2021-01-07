@@ -15,6 +15,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cuttlefish.teamtrackandroid.R;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.ChartData;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
@@ -41,6 +44,7 @@ public class TeamView extends AppCompatActivity {
         list.add(new LineChartItem(generateDataLine(1), getApplicationContext()));
         list.add(new LineChartItem(generateDataLine(2), getApplicationContext()));
         list.add(new LineChartItem(generateDataLine(3), getApplicationContext()));
+        list.add(new BarChartItem(generateDataBar(4), getApplicationContext()));
 
         ChartDataAdapter cda = new ChartDataAdapter(getApplicationContext(), list);
         lv.setAdapter(cda);
@@ -105,6 +109,23 @@ public class TeamView extends AppCompatActivity {
         sets.add(d2);
 
         return new LineData(sets);
+    }
+
+    private BarData generateDataBar(int cnt) {
+
+        ArrayList<BarEntry> entries = new ArrayList<>();
+
+        for (int i = 0; i < 12; i++) {
+            entries.add(new BarEntry(i, (int) (Math.random() * 70) + 30));
+        }
+
+        BarDataSet d = new BarDataSet(entries, "New DataSet " + cnt);
+        d.setColors(ColorTemplate.VORDIPLOM_COLORS);
+        d.setHighLightAlpha(255);
+
+        BarData cd = new BarData(d);
+        cd.setBarWidth(0.9f);
+        return cd;
     }
 
 }

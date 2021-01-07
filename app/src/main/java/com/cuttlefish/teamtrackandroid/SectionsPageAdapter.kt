@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import java.util.*
 
+
 class SectionsPageAdapter(fm: FragmentManager?) : FragmentPagerAdapter(
     fm!!
 ) {
