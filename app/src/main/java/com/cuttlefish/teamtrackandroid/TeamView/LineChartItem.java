@@ -2,11 +2,13 @@ package com.cuttlefish.teamtrackandroid.TeamView;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.XAxis.XAxisPosition;
@@ -54,6 +56,15 @@ public class LineChartItem extends ChartItem {
         // holder.chart.setValueTypeface(mTf);
         holder.chart.getDescription().setEnabled(false);
         holder.chart.setDrawGridBackground(false);
+        holder.chart.setAutoScaleMinMaxEnabled(true);
+
+
+        Description description = holder.chart.getDescription();
+        description.setEnabled(true);
+        description.setTextAlign(Paint.Align.LEFT);
+        description.setTextSize(30);
+        description.setText("Statistics");
+        description.setPosition(100, 40);
 
         XAxis xAxis = holder.chart.getXAxis();
         xAxis.setPosition(XAxisPosition.BOTTOM);

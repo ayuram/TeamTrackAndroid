@@ -1,10 +1,14 @@
 package com.cuttlefish.teamtrackandroid.TeamView;
 
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.content.Context;
+import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
@@ -50,16 +54,21 @@ public class BarChartItem extends ChartItem{
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
+        float center = (float) (holder.chart.getWidth()/2.0);
 
         // apply styling
-        holder.chart.getDescription().setEnabled(false);
         holder.chart.setDrawGridBackground(false);
         holder.chart.setDrawBarShadow(false);
         holder.chart.setDrawMarkers(false);
         holder.chart.setDrawBorders(false);
+        holder.chart.setAutoScaleMinMaxEnabled(false);
 
         Description description = holder.chart.getDescription();
         description.setEnabled(true);
+        description.setTextAlign(Paint.Align.CENTER);
+        description.setPosition(center, 40);
+        description.setTextSize(30);
+        description.setText("bar chart");
 
         XAxis xAxis = holder.chart.getXAxis();
         xAxis.setDrawAxisLine(false);

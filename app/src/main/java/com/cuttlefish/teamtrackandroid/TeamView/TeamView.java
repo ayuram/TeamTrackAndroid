@@ -40,10 +40,14 @@ public class TeamView extends AppCompatActivity {
 
         ArrayList<ChartItem> list = new ArrayList<>();
 
-        list.add(new LineChartItem(generateDataLine(1), getApplicationContext()));
-        list.add(new LineChartItem(generateDataLine(2), getApplicationContext()));
-        list.add(new LineChartItem(generateDataLine(3), getApplicationContext()));
-        list.add(new BarChartItem(generateDataBar(4), getApplicationContext()));
+        list.add(new LineChartItem(generateDataLine(), getApplicationContext()));
+        list.add(new BarChartItem(generateDataBar(), getApplicationContext()));
+        list.add(new BarChartItem(generateDataBar(), getApplicationContext()));
+        list.add(new BarChartItem(generateDataBar(), getApplicationContext()));
+        list.add(new LineChartItem(generateDataLine(), getApplicationContext()));
+        list.add(new LineChartItem(generateDataLine(), getApplicationContext()));
+
+
 
         ChartDataAdapter cda = new ChartDataAdapter(getApplicationContext(), list);
         lv.setAdapter(cda);
@@ -75,7 +79,7 @@ public class TeamView extends AppCompatActivity {
         }
     }
 
-    private LineData generateDataLine(int cnt) {
+    private LineData generateDataLine() {
 
         ArrayList<Entry> values1 = new ArrayList<>();
 
@@ -83,7 +87,7 @@ public class TeamView extends AppCompatActivity {
             values1.add(new Entry(i, (int) (Math.random() * 65) + 40));
         }
 
-        LineDataSet d1 = new LineDataSet(values1, "New DataSet " + cnt + ", (1)");
+        LineDataSet d1 = new LineDataSet(values1, "line chart");
         d1.setLineWidth(2.5f);
         d1.setCircleRadius(4.5f);
         d1.setHighLightColor(Color.rgb(244, 117, 117));
@@ -95,7 +99,7 @@ public class TeamView extends AppCompatActivity {
             values2.add(new Entry(i, values1.get(i).getY() - 30));
         }
 
-        LineDataSet d2 = new LineDataSet(values2, "New DataSet " + cnt + ", (2)");
+        LineDataSet d2 = new LineDataSet(values2, "line chart");
         d2.setLineWidth(2.5f);
         d2.setCircleRadius(4.5f);
         d2.setHighLightColor(Color.rgb(244, 117, 117));
@@ -110,7 +114,7 @@ public class TeamView extends AppCompatActivity {
         return new LineData(sets);
     }
 
-    private BarData generateDataBar(int cnt) {
+    private BarData generateDataBar() {
 
         ArrayList<BarEntry> entries = new ArrayList<>();
 
@@ -118,7 +122,7 @@ public class TeamView extends AppCompatActivity {
             entries.add(new BarEntry(i, (int) (Math.random() * 70) + 30));
         }
 
-        BarDataSet d = new BarDataSet(entries, "New DataSet " + cnt);
+        BarDataSet d = new BarDataSet(entries, "bar chart");
         d.setColors(ColorTemplate.VORDIPLOM_COLORS);
         d.setHighLightAlpha(255);
 
